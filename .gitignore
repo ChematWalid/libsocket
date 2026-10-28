@@ -1,0 +1,22 @@
+# Build directories
+build/
+build_clean/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+CTestTestfile.cmake
+Makefile
+
+# Object and binary outputs
+*.o
+*.a
+*.so
+*.dylib
+*.dll
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
