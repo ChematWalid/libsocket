@@ -27,6 +27,23 @@ target_include_directories(libsocket
         $<INSTALL_INTERFACE:include>
 )
 
+# Output as libsocket.a so it can be linked via -lsocket
+set_target_properties(libsocket PROPERTIES OUTPUT_NAME "socket")
+
+# Installation rules
+include(GNUInstallDirs)
+
+install(TARGETS libsocket
+    EXPORT libsocketTargets
+    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+)
+
+install(DIRECTORY include/libsocket
+    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+)
+
 # Examples
 set(EXAMPLES
     tcp_server
